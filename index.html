@@ -252,6 +252,30 @@
 
 <h3> <p style="color: #800020;">अगर स्वप्नों को समझने में तुम्हें और मदद चाहिए, तो अपनी सपने की घटनाओं को लिखने की आदत डालो। इससे तुम्हारे दिमाग के संकेत बेहतर समझ में आएंगे। </h3>
 </p>
+           <p>यहाँ आप अपनी राय लिख सकते हैं:</p>
+
+    <div class="comment-box">
+        <textarea id="comment" placeholder="अपना कमेंट यहाँ लिखें..."></textarea>
+        <button onclick="submitComment()">सबमिट करें</button>
+    </div>
+
+    <h3>आपके कमेंट:</h3>
+    <div id="comments-section"></div>
+
+    <script>
+        function submitComment() {
+            const comment = document.getElementById('comment').value;
+            if (comment.trim() !== "") {
+                const commentsSection = document.getElementById('comments-section');
+                const newComment = document.createElement('p');
+                newComment.textContent = comment;
+                commentsSection.appendChild(newComment);
+                document.getElementById('comment').value = ""; // Clear the textarea
+            } else {
+                alert("कृपया पहले अपना कमेंट लिखें।");
+            }
+        }
+    </script>
          <h1> <p><span class="read-more" onclick="toggleContent('content2')">ब्लाग देखें </span></p>
 
         <div id="content2" class="content">
