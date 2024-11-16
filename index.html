@@ -365,7 +365,30 @@ Today, with its robust infrastructure and a proactive leadership, the state offe
 
     </section>
     </main>
+     <p>यहाँ आप अपनी राय लिख सकते हैं:</p>
 
+    <div class="comment-box">
+        <textarea id="comment" placeholder="अपना कमेंट यहाँ लिखें..."></textarea>
+        <button onclick="submitComment()">सबमिट करें</button>
+    </div>
+
+    <h3>आपके कमेंट:</h3>
+    <div id="comments-section"></div>
+
+    <script>
+        function submitComment() {
+            const comment = document.getElementById('comment').value;
+            if (comment.trim() !== "") {
+                const commentsSection = document.getElementById('comments-section');
+                const newComment = document.createElement('p');
+                newComment.textContent = comment;
+                commentsSection.appendChild(newComment);
+                document.getElementById('comment').value = ""; // Clear the textarea
+            } else {
+                alert("कृपया पहले अपना कमेंट लिखें।");
+            }
+        }
+    </script>
     <footer>
         <p>Contact:</p>
         <p>Email: karanjohn08@gmail.com</p>
